@@ -1,0 +1,42 @@
+# logging configuration
+logging:
+  file: logs/indigenous.log
+  pattern:
+    console: "%d %-5level %logger : %msg%n"
+    file: "%d %-5level [%thread] %logger : %msg%n"
+  level:
+    org.springframework.web: WARN
+    in.indigenous.qa: DEBUG
+    
+# Spring MVC configuration
+spring:
+  mvc:
+    view:
+      prefix: /WEB-INF/view/
+      suffix: .jsp
+  resources:
+    chain:
+      strategy:
+        content:
+          enabled: true
+          paths:
+          - /**
+# Server configuration
+server:
+  port: 8084
+  servlet:
+    context-path: /
+
+# Application configuration
+application:
+  name: Indigenous
+  version: 0
+  major:
+    version: 0
+  minor:
+    version: 2
+  slogan: Quality Matters
+  
+# Page related configurations
+home:
+  title: Home
